@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <table>
+        <caption>Cars</caption>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Model</th>
+            <th>Release<br>year</th>
+            <th>Price<br>(millions<br>of<br>rubles)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="car, it : ${cars}">
+            <!--            th:style="${it.odd}? 'font-weight: bold;'">-->
+            <th th:text="${it.index}+1"></th>
+            <td th:text="${car.name}"></td>
+            <td th:text="${car.year}"></td>
+            <td th:text="${car.price}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
